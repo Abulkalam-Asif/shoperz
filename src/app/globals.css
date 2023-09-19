@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.carousel.carousel.carousel-slider {
+  position: static;
+}
+
+.carousel.carousel .control-dots {
+  margin-bottom: 1rem;
+}
+
 .carousel.carousel .control-dots .dot {
   width: 0.75rem;
   height: 0.75rem;

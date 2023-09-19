@@ -24,8 +24,8 @@ module.exports = {
       maxWidth: {
         "8xl": "1440px",
       },
-      backgroundImage: {
-        heroBg: "url(./assets/hero_bg.png)",
+      backgroundColor: {
+        heroBg: "#0F121E",
       },
     },
   },
