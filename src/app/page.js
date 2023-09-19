@@ -1,10 +1,11 @@
 import React from "react";
-import { Hero } from "./containers";
+import { Benefits, Hero } from "./containers";
 
 const page = () => {
   return (
     <>
       <Hero />
+      <Benefits />
     </>
   );
 };
