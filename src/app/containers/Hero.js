@@ -20,7 +20,10 @@ const Hero = () => {
         showArrows={false}
         showStatus={false}
         showThumbs={false}
-        swipeable={true}>
+        autoPlay={true}
+        interval={3000}
+        infiniteLoop={true}
+        swipeable={false}>
         <div
           className={`${inter.className} relative h-full flex items-center bg-heroBg md:flex-col`}>
           <div className="w-1/2 h-full absolute -top-1/2 -translate-y-1/2 right-1/2 translate-x-full z-0 xl:-top-1/4 md:-top-20 md:w-2/3 sm:-translate-y-0">
