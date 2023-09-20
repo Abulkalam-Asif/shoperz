@@ -1,4 +1,5 @@
 import "./globals.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Roboto } from "next/font/google";
 
 const roboto = Roboto({
