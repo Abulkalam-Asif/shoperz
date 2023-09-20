@@ -66,7 +66,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="pt-16 pb-8">
+      <footer className="pt-16 pb-10">
         <div className="px-4">
           <div className="max-w-8xl mx-auto grid grid-cols-5 gap-x-6 gap-y-16 lg:grid-cols-3 sm:grid-cols-2">
             <div className="col-span-2 flex flex-col gap-y-5 lg:col-span-3 sm:col-span-2">
@@ -93,14 +93,12 @@ const Footer = () => {
             />
           </div>
         </div>
-        <div className="md:px-4">
-          <hr className="text-Grey-600" />
-        </div>
+        <hr className="text-Grey-600 my-4 md:mx-4" />
         <div className="px-4 flex items-center justify-between gap-x-4 md:flex-col-reverse">
           <span className="text-Grey-600 text-sm">
             &copy; <b>Shoperz</b> 2023 - All Rights Reserved
           </span>
-          <hr className="hidden md:block text-Grey-600 w-full" />
+          <hr className="hidden md:block text-Grey-600 w-full my-4" />
           <ul className="flex gap-x-5 items-center m-0">
             {footerSocialLinks.map(({ icon, href }, index) => (
               <li className="w-5 h-5" key={index}>
@@ -108,7 +106,7 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-          <hr className="hidden md:block text-Grey-600 w-full" />
+          <hr className="hidden md:block text-Grey-600 w-full my-4" />
           <ul className="flex m-0">
             {footerCompanies.map((company, index) => (
               <li key={index}>
