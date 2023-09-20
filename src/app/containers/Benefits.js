@@ -9,7 +9,7 @@ import icon5 from "../assets/benefitsIcons/icon5.png";
 const Benefits = () => {
   return (
     <>
-      <section className="py-16 px-8">
+      <section className="py-16 px-4">
         <div className="max-w-8xl mx-auto space-y-9">
           <H3 text={"Benefits"} />
           <div className="grid grid-cols-5 border-2 border-Grey-100 py-8 rounded-md lg:grid-cols-3 lg:gap-y-12 sm:grid-cols-2 xs:grid-cols-1">

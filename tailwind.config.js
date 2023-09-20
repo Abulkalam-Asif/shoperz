@@ -24,6 +24,7 @@ module.exports = {
       colors: {
         "Grey-900": "rgba(29, 35, 44, 1)",
         "Grey-700": "rgba(88, 106, 132, 1)",
+        "Grey-600": "rgba(125, 143, 169, 1)",
         "Grey-100": "rgba(238, 240, 244, 1)",
         "Primary-600": "rgba(49, 157, 255, 1)",
       },

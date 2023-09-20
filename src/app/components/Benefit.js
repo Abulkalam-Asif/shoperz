@@ -15,7 +15,7 @@ const Benefit = ({
         "after:h-full after:w-0.5 after:bg-Grey-100 after:absolute after:right-0 xs:after:hidden"
       } ${afterStyles}`}>
       <div>
-        <Image src={icon} />
+        <Image src={icon} alt="benefit icon" />
       </div>
       <div className="flex flex-col items-start justify-center">
         <span className="font-bold">{heading}</span>
