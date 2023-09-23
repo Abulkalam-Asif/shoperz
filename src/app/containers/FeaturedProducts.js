@@ -1,5 +1,6 @@
 "use client";
-import React from "react";
+
+import React,{useEffect} from "react";
 import { H3, HomeProduct } from "../components";
 import item1Img from "../assets/item1.png";
 import item2Img from "../assets/item2.png";
@@ -8,14 +9,13 @@ import item4Img from "../assets/item4.png";
 import item5Img from "../assets/item5.png";
 import leftarrow from "../assets/leftarrow.png";
 import nextarrow from "../assets/rightarrow.png";
-
-
-import Carousel from "react-bootstrap/Carousel";
-
 import Slider from 'react-slick';
-
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
+
+import { setProducts } from "../store/slices/userSlice";
+import { useDispatch, useSelector } from 'react-redux'
 
 
 import { useRef } from "react";
@@ -58,6 +58,19 @@ const FeaturedProducts = () => {
     },
   ];
 
+
+  const dispatch = useDispatch()
+
+  dispatch(setProducts(featuredProducts))
+
+  const  data  = useSelector((state) => {
+    return state.users.data
+  })
+
+if(data){
+    console.log(" my data" , data)
+  }
+  
   const sliderRef = useRef(null);
 
 
@@ -150,7 +163,7 @@ const FeaturedProducts = () => {
 
           <div>
             <Slider {...settings} ref={sliderRef}>
-              {featuredProducts.map(
+              {data?.map(
                 ({ companyName, productName, image, price }, index) => (
                   <HomeProduct
                     key={index}
