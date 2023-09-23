@@ -25,6 +25,7 @@ module.exports = {
         "Grey-900": "rgba(29, 35, 44, 1)",
         "Grey-700": "rgba(88, 106, 132, 1)",
         "Grey-600": "rgba(125, 143, 169, 1)",
+        "Grey-400": "rgba(186, 196, 209, 1)",
         "Grey-100": "rgba(238, 240, 244, 1)",
         "Primary-600": "rgba(49, 157, 255, 1)",
       },
@@ -33,6 +34,12 @@ module.exports = {
       },
       backgroundColor: {
         heroBg: "#0F121E",
+      },
+      fontSize: {
+        xxs: "0.5rem",
+      },
+      borderRadius: {
+        "4xl": "3rem",
       },
     },
   },

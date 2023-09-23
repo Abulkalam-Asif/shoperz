@@ -1,6 +1,6 @@
 "use client";
 
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { H3, HomeProduct } from "../components";
 import item1Img from "../assets/item1.png";
 import item2Img from "../assets/item2.png";
@@ -9,19 +9,16 @@ import item4Img from "../assets/item4.png";
 import item5Img from "../assets/item5.png";
 import leftarrow from "../assets/leftarrow.png";
 import nextarrow from "../assets/rightarrow.png";
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import { setProducts } from "../store/slices/userSlice";
-import { useDispatch, useSelector } from 'react-redux'
-
+import { useDispatch, useSelector } from "react-redux";
 
 import { useRef } from "react";
 
-import Head from 'next/head';
-
+import Head from "next/head";
 
 const FeaturedProducts = () => {
   const featuredProducts = [
@@ -58,21 +55,19 @@ const FeaturedProducts = () => {
     },
   ];
 
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch()
+  dispatch(setProducts(featuredProducts));
 
-  dispatch(setProducts(featuredProducts))
+  const data = useSelector(state => {
+    return state.users.data;
+  });
 
-  const  data  = useSelector((state) => {
-    return state.users.data
-  })
-
-if(data){
-    console.log(" my data" , data)
+  if (data) {
+    // console.log(" my data", data);
   }
-  
-  const sliderRef = useRef(null);
 
+  const sliderRef = useRef(null);
 
   const previousSlide = () => {
     sliderRef.current.slickPrev();
@@ -82,7 +77,7 @@ if(data){
     sliderRef.current.slickNext();
   };
 
-  const CustomPrevArrow = (props) => (
+  const CustomPrevArrow = props => (
     <button
       className="custom-arrows prev-arrow"
       onClick={props.onClick}
@@ -90,15 +85,13 @@ if(data){
     />
   );
 
-  const CustomNextArrow = (props) => (
+  const CustomNextArrow = props => (
     <button
       className="custom-arrows next-arrow"
       onClick={props.onClick}
       style={{ display: "none" }}
     />
   );
-
-
 
   const settings = {
     dots: false,
@@ -126,39 +119,35 @@ if(data){
     ],
   };
 
-
-
   return (
     <>
-
       <Head>
-        <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          charSet="UTF-8"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+        />
       </Head>
-
 
       <section className="py-16 px-8">
         <div className="max-w-8xl mx-auto space-y-9">
-
-
           <div className="flex justify-between">
-
             <H3 text={"Featured Products"} />
 
-    <div>
-
-            <button
-
-              onClick={previousSlide}
-            >
-              <img src={leftarrow} alt="leftarrow" />
-            </button>
-            <button onClick={nextSlide}>
-              <img src={nextarrow} alt="nextarrow" />
-            </button>
+            <div>
+              <button onClick={previousSlide}>
+                <img src={leftarrow} alt="leftarrow" />
+              </button>
+              <button onClick={nextSlide}>
+                <img src={nextarrow} alt="nextarrow" />
+              </button>
             </div>
-
-
           </div>
 
           <div>

@@ -6,7 +6,7 @@ const page = () => {
     <>
       <Hero />
       <Benefits />
-      <FeaturedProducts />
+      {/* <FeaturedProducts /> */}
       <Newsletter />
     </>
   );
