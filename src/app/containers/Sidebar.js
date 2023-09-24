@@ -3,9 +3,37 @@ import shoperzLogo from "../assets/shoperz.svg";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+import SidebarCategoriesGeneral from "./SidebarCategoriesGeneral";
 import SidebarCategoriesBox from "./SidebarCategoriesBox";
 
 const Sidebar = ({ isSidebarExpanded, toggleSidebar }) => {
+  const categories = [
+    {
+      idHtmlFor: "categoryAll",
+      label: "All",
+      itemsCount: 1929,
+    },
+    {
+      idHtmlFor: "categoryMac",
+      label: "iMac & MacBook",
+      itemsCount: 81,
+    },
+    {
+      idHtmlFor: "categoryGamingComp",
+      label: "Gaming Computers",
+      itemsCount: 1126,
+    },
+    {
+      idHtmlFor: "categoryLenovo&PCs",
+      label: "Lenovo & PCs",
+      itemsCount: 148,
+    },
+    {
+      idHtmlFor: "categoryGadgets",
+      label: "Gadgets",
+      itemsCount: 510,
+    },
+  ];
   const brands = [
     {
       idHtmlFor: "appleCheckbox",
@@ -70,12 +98,13 @@ const Sidebar = ({ isSidebarExpanded, toggleSidebar }) => {
     <>
       {isSidebarExpanded && (
         <div
+          onClick={toggleSidebar}
           className={`hidden lg:block fixed top-0 right-0 left-0 bottom-0 bg-black z-40 opacity-40`}></div>
       )}
       <aside
         className={`hidden fixed min-w-[20rem] top-0 ${
           isSidebarExpanded ? "left-0" : "-left-full"
-        } bottom-0 h-screen transition-all duration-300 flex-col items-center gap-y-5 z-50 bg-white px-8 py-12 rounded-tr-4xl overflow-y-auto lg:flex`}>
+        } bottom-0 h-screen transition-all duration-300 flex-col items-center gap-y-5 z-50 bg-white px-8 pt-12 pb-20 rounded-tr-4xl overflow-y-auto lg:flex`}>
         <button className="absolute top-7 right-7" onClick={toggleSidebar}>
           <FontAwesomeIcon icon={faX} className="min-w-[1.25rem] h-auto" />
         </button>
@@ -87,8 +116,9 @@ const Sidebar = ({ isSidebarExpanded, toggleSidebar }) => {
           />
         </a>
         <hr className="w-full h-1 mt-4 mb-0" />
-        <SidebarCategoriesBox title={"Brands"} data={brands} />
-        <SidebarCategoriesBox title={"Price"} data={priceRanges} />
+        <SidebarCategoriesBox data={categories} />
+        <SidebarCategoriesGeneral title={"Brands"} data={brands} />
+        <SidebarCategoriesGeneral title={"Price"} data={priceRanges} />
       </aside>
     </>
   );

@@ -1,7 +1,7 @@
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Roboto } from "next/font/google";
-import { Footer, Header } from "./containers";
+import { Footer, Header, Newsletter } from "./containers";
 
 import { Providers } from "./store/provider";
 
@@ -22,6 +22,7 @@ export default function RootLayout({ children }) {
         <Providers>
           <Header />
           {children}
+          <Newsletter />
           <Footer />
         </Providers>
       </body>

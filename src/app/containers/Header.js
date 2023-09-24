@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import businessBagIcon from "../assets/headerIcons/businessBag.svg";
 import currencyIcon from "../assets/headerIcons/currency.svg";
 import helpIcon from "../assets/headerIcons/help.svg";
@@ -20,10 +20,19 @@ import barsIcon from "../assets/headerIcons/bars.svg";
 import Sidebar from "./Sidebar";
 
 const Header = () => {
-  const [isSidebarExpanded, setisSidebarExpanded] = useState(true);
+  const [isSidebarExpanded, setisSidebarExpanded] = useState(false);
   const toggleSidebar = () => {
     setisSidebarExpanded(prevState => !prevState);
   };
+
+  useEffect(() => {
+    if (isSidebarExpanded) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "visible";
+    }
+  }, [isSidebarExpanded]);
+
   return (
     <>
       <Sidebar

@@ -1,5 +1,5 @@
 import React from "react";
-import { Benefits, FeaturedProducts, Hero, Newsletter } from "./containers";
+import { Benefits, FeaturedProducts, Hero } from "./containers";
 
 const page = () => {
   return (
@@ -7,7 +7,6 @@ const page = () => {
       <Hero />
       <Benefits />
       {/* <FeaturedProducts /> */}
-      <Newsletter />
     </>
   );
 };
