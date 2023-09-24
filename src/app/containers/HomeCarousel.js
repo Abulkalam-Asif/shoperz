@@ -22,22 +22,21 @@ const Carousel = ({ products, h3 }) => {
     sliderRef.current.slickNext();
   };
 
-  // EXTRA
-  // const CustomPrevArrow = props => (
-  //   <button
-  //     className="custom-arrows prev-arrow"
-  //     onClick={props.onClick}
-  //     style={{ display: "none" }}
-  //   />
-  // );
+  const CustomPrevArrow = props => (
+    <button
+      className="custom-arrows prev-arrow"
+      onClick={props.onClick}
+      style={{ display: "none" }}
+    />
+  );
 
-  // const CustomNextArrow = props => (
-  //   <button
-  //     className="custom-arrows next-arrow"
-  //     onClick={props.onClick}
-  //     style={{ display: "none" }}
-  //   />
-  // );
+  const CustomNextArrow = props => (
+    <button
+      className="custom-arrows next-arrow"
+      onClick={props.onClick}
+      style={{ display: "none" }}
+    />
+  );
 
   const sliderSettings = {
     dots: false,
@@ -46,9 +45,8 @@ const Carousel = ({ products, h3 }) => {
     slidesToShow: 4, // Set this to the number of products you want to show in a row
     slidesToScroll: 1, // Set this to 1 to scroll one product at a time
 
-    // EXTRA
-    // prevArrow: <CustomPrevArrow />,
-    // nextArrow: <CustomNextArrow />,
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
     responsive: [
       {
         breakpoint: 1280,
