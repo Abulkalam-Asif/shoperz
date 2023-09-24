@@ -15,7 +15,7 @@ import {
   faHeart,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
-import cartIcon from "../assets/headerIcons/cart.svg";
+import cartIcon from "../assets/cart.svg";
 import barsIcon from "../assets/headerIcons/bars.svg";
 import Sidebar from "./Sidebar";
 

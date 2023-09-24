@@ -1,14 +1,13 @@
-'use client'
-
-import { configureStore } from '@reduxjs/toolkit'
-import {
-  userReducer,
-} from './slices/userSlice'
+"use client";
+import { configureStore } from "@reduxjs/toolkit";
+import { featuredProductsReducer } from "./slices/featuredProductsSlice";
+import { bigDealsReducer } from "./slices/bigDealsSlice";
 
 const store = configureStore({
   reducer: {
-    users: userReducer,
+    featuredProducts: featuredProductsReducer,
+    bigDeals: bigDealsReducer,
   },
-})
+});
 
-export { store }
+export { store };
