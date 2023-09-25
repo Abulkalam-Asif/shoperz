@@ -17,28 +17,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import cartIcon from "../assets/cart.svg";
 import barsIcon from "../assets/headerIcons/bars.svg";
-import Sidebar from "./Sidebar";
+import { useDispatch } from "react-redux";
+import { toggleSidebar } from "../store/slices/isSidebarExpandedSlice";
 
 const Header = () => {
-  const [isSidebarExpanded, setisSidebarExpanded] = useState(false);
-  const toggleSidebar = () => {
-    setisSidebarExpanded(prevState => !prevState);
-  };
-
-  useEffect(() => {
-    if (isSidebarExpanded) {
-      document.body.style.overflowY = "hidden";
-    } else {
-      document.body.style.overflowY = "visible";
-    }
-  }, [isSidebarExpanded]);
+  const dispatch = useDispatch();
 
   return (
     <>
-      <Sidebar
-        isSidebarExpanded={isSidebarExpanded}
-        toggleSidebar={toggleSidebar}
-      />
       <header className="my-4">
         <div className="max-w-8xl mx-auto px-4 lg:hidden">
           <div className="flex items-center justify-between">
@@ -69,7 +55,7 @@ const Header = () => {
               src={barsIcon}
               alt="Bars icon"
               className="min-w-[1.75rem]"
-              onClick={toggleSidebar}
+              onClick={() => dispatch(toggleSidebar())}
             />
           </button>
           <a href="/">

@@ -15,7 +15,7 @@ const HomeProduct = ({
 
   return (
     <>
-      <div className="grid grid-rows-6 border border-Grey-100 rounded-md p-3 mx-2 h-96">
+      <div className="grid grid-rows-6 border-1 border-Grey-100 rounded-md p-3 mx-2 h-96">
         <div className="row-span-2">
           <p className="text-Grey-700 text-xs">{companyName}</p>
           <a href="#" className="text-Primary-700 no-underline">

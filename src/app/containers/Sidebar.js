@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import shoperzLogo from "../assets/shoperz.svg";
 import Image from "next/image";
@@ -6,7 +7,11 @@ import { faX } from "@fortawesome/free-solid-svg-icons";
 import SidebarCategoriesGeneral from "./SidebarCategoriesGeneral";
 import SidebarCategoriesBox from "./SidebarCategoriesBox";
 
-const Sidebar = ({ isSidebarExpanded, toggleSidebar }) => {
+const Sidebar = ({
+  toggleSidebar = null,
+  isSidebarExpanded = null,
+  type = "landingSidebar",
+}) => {
   const categories = [
     {
       idHtmlFor: "categoryAll",
@@ -94,6 +99,17 @@ const Sidebar = ({ isSidebarExpanded, toggleSidebar }) => {
     },
   ];
 
+  let typeStyles = "";
+  if (type === "landingSidebar") {
+    typeStyles = `hidden ${
+      isSidebarExpanded ? "lg:left-0" : "lg:-left-full"
+    } lg:flex`;
+  } else if (type === "productsSidebar") {
+    typeStyles = `flex static min-w-[17rem] w-[20%] ${
+      isSidebarExpanded ? "lg:left-0" : "lg:-left-full"
+    }`;
+  }
+
   return (
     <>
       {isSidebarExpanded && (
@@ -102,20 +118,20 @@ const Sidebar = ({ isSidebarExpanded, toggleSidebar }) => {
           className={`hidden lg:block fixed top-0 right-0 left-0 bottom-0 bg-black z-40 opacity-40`}></div>
       )}
       <aside
-        className={`hidden fixed min-w-[20rem] top-0 ${
-          isSidebarExpanded ? "left-0" : "-left-full"
-        } bottom-0 h-screen transition-all duration-300 flex-col items-center gap-y-5 z-50 bg-white px-8 pt-12 pb-20 rounded-tr-4xl overflow-y-auto lg:flex`}>
-        <button className="absolute top-7 right-7" onClick={toggleSidebar}>
+        className={`bg-white flex-col items-center gap-y-5 lg:h-screen lg:fixed lg:top-0 lg:bottom-0 lg:min-w-[20rem] lg:transition-all lg:duration-300 lg:px-8 lg:pt-12 lg:pb-20 lg:rounded-tr-4xl lg:overflow-y-auto lg:z-50 ${typeStyles}`}>
+        <button
+          className="absolute hidden top-7 right-7 lg:block"
+          onClick={toggleSidebar}>
           <FontAwesomeIcon icon={faX} className="min-w-[1.25rem] h-auto" />
         </button>
-        <a href="/">
+        <a href="/" className="hidden lg:block">
           <Image
             src={shoperzLogo}
             alt="Shoperz logo"
             className="min-w-[7rem] w-32 max-w-[8rem]"
           />
         </a>
-        <hr className="w-full h-1 mt-4 mb-0" />
+        <hr className="hidden border-Grey-400 w-full h-1 mt-4 mb-0 lg:block" />
         <SidebarCategoriesBox data={categories} />
         <SidebarCategoriesGeneral title={"Brands"} data={brands} />
         <SidebarCategoriesGeneral title={"Price"} data={priceRanges} />
