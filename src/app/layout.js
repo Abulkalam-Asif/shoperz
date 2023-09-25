@@ -1,5 +1,4 @@
 import "./globals.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Roboto } from "next/font/google";
 import { Footer, Header, Newsletter } from "./containers";
 

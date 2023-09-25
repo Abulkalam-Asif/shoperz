@@ -12,7 +12,7 @@ const ProductsHeader = () => {
 
   return (
     <>
-      <div className="w-full border-1 px-[1.25rem] pt-[1.25rem] pb-[0.75rem] rounded-md border-Grey-100">
+      <div className="w-full border-1 px-5 pt-5 pb-3 rounded-md border-Grey-100">
         <div className="flex items-center justify-between">
           <h1 className="text-3xl text-Grey-900">Products List</h1>
           <p className="text-sm text-Grey-900">
