@@ -3,6 +3,7 @@ export { default as Sidebar } from "./Sidebar";
 export { default as LandingSidebar } from "./LandingSidebar";
 export { default as ProductsSidebar } from "./ProductsSidebar";
 export { default as ProductsHeader } from "./ProductsHeader";
+export { default as ProductsList } from "./ProductsList";
 export { default as SidebarCategoriesGeneral } from "./SidebarCategoriesGeneral";
 export { default as SidebarCategoriesBox } from "./SidebarCategoriesBox";
 export { default as HomeCarousel } from "./HomeCarousel";

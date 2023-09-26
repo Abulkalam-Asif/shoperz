@@ -24,7 +24,7 @@ const Sidebar = ({
       itemsCount: 81,
     },
     {
-      idHtmlFor: "categoryGamingComp",
+      idHtmlFor: "categoryGamingComputers",
       label: "Gaming Computers",
       itemsCount: 1126,
     },
@@ -101,13 +101,9 @@ const Sidebar = ({
 
   let typeStyles = "";
   if (type === "landingSidebar") {
-    typeStyles = `hidden ${
-      isSidebarExpanded ? "lg:left-0" : "lg:-left-full"
-    } lg:flex`;
+    typeStyles = `hidden lg:flex`;
   } else if (type === "productsSidebar") {
-    typeStyles = `flex static min-w-[17rem] w-[20%] ${
-      isSidebarExpanded ? "lg:left-0" : "lg:-left-full"
-    }`;
+    typeStyles = `flex static min-w-[17rem] w-[20%] `;
   }
 
   return (
@@ -118,7 +114,9 @@ const Sidebar = ({
           className={`hidden lg:block fixed top-0 right-0 left-0 bottom-0 bg-black z-40 opacity-40`}></div>
       )}
       <aside
-        className={`bg-white flex-col items-center gap-y-5 lg:h-screen lg:fixed lg:top-0 lg:bottom-0 lg:min-w-[20rem] lg:transition-all lg:duration-300 lg:px-8 lg:pt-12 lg:pb-20 lg:rounded-tr-4xl lg:overflow-y-auto lg:z-50 ${typeStyles}`}>
+        className={`bg-white flex-col items-center gap-y-5 lg:h-screen lg:fixed lg:top-0 lg:bottom-0 lg:min-w-[20rem] lg:transition-all lg:duration-300 lg:px-8 lg:pt-12 lg:pb-20 lg:rounded-tr-4xl lg:overflow-y-auto lg:z-50 ${
+          isSidebarExpanded ? "lg:left-0" : "lg:-left-full"
+        } ${typeStyles}`}>
         <button
           className="absolute hidden top-7 right-7 lg:block"
           onClick={toggleSidebar}>

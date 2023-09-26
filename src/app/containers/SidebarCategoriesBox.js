@@ -9,6 +9,11 @@ const SidebarCategoriesBox = ({ data }) => {
     setIsListExpanded(prevState => !prevState);
   };
 
+  const [checkedItem, setCheckedItem] = useState("categoryAll");
+  const checkedItemHandler = e => {
+    setCheckedItem(e.target.id);
+  };
+
   return (
     <>
       <div className="w-full flex flex-col items-start gap-y-2 p-4 bg-Grey-100 rounded-md">
@@ -30,10 +35,21 @@ const SidebarCategoriesBox = ({ data }) => {
               <li key={index} className="flex items-center gap-x-2 text-sm">
                 <input
                   type="radio"
+                  className="hidden"
                   name="categoryRadio"
                   id={dataItem.idHtmlFor}
+                  checked={checkedItem === dataItem.idHtmlFor}
+                  onChange={checkedItemHandler}
                 />
-                <label htmlFor={dataItem.idHtmlFor}>{dataItem.label}</label>
+                <label
+                  htmlFor={dataItem.idHtmlFor}
+                  className={`cursor-pointer ${
+                    checkedItem === dataItem.idHtmlFor
+                      ? "text-Grey-900 font-medium"
+                      : "text-Grey-700"
+                  }`}>
+                  {dataItem.label}
+                </label>
                 <span className="text-Grey-600">({dataItem.itemsCount})</span>
               </li>
             ))}
@@ -47,10 +63,21 @@ const SidebarCategoriesBox = ({ data }) => {
                 <li key={index} className="flex items-center gap-x-2 text-sm">
                   <input
                     type="radio"
+                    className="hidden"
                     name="categoryRadio"
                     id={dataItem.idHtmlFor}
+                    checked={checkedItem === dataItem.idHtmlFor}
+                    onChange={checkedItemHandler}
                   />
-                  <label htmlFor={dataItem.idHtmlFor}>{dataItem.label}</label>
+                  <label
+                    htmlFor={dataItem.idHtmlFor}
+                    className={`cursor-pointer ${
+                      checkedItem === dataItem.idHtmlFor
+                        ? "text-Grey-900 font-medium"
+                        : "text-Grey-700"
+                    }`}>
+                    {dataItem.label}
+                  </label>
                   <span className="text-Grey-600">({dataItem.itemsCount})</span>
                 </li>
               ))}

@@ -12,7 +12,7 @@ const SidebarCategoriesGeneral = ({ title, data }) => {
   };
 
   return (
-    <div className="w-full flex flex-col items-start gap-y-2 p-4 border-1 border-Grey-100 rounded-md">
+    <div className="w-full flex flex-col items-start gap-y-2 p-4 border border-Grey-100 rounded-md">
       <h4 className="text-base font-medium text-Grey-900">{title}</h4>
       <ul className={`flex flex-col gap-y-2 p-0 m-0`}>
         <div className="space-y-2">

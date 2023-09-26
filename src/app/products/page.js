@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductsHeader, ProductsSidebar } from "../containers";
+import { ProductsHeader, ProductsList, ProductsSidebar } from "../containers";
 
 const page = () => {
   return (
@@ -8,6 +8,7 @@ const page = () => {
         <ProductsSidebar />
         <div className="w-full">
           <ProductsHeader />
+          <ProductsList />
         </div>
       </section>
     </>
