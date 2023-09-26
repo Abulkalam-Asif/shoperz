@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleSidebar } from "../store/slices/isSidebarExpandedSlice";
 
-const productsSidebar = () => {
+const ProductsSidebar = () => {
   const dispatch = useDispatch();
   const isSidebarExpanded = useSelector(state => {
     return state?.isSidebarExpanded;
@@ -28,4 +28,4 @@ const productsSidebar = () => {
   );
 };
 
-export default productsSidebar;
+export default ProductsSidebar;
