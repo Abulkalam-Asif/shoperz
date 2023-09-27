@@ -1,16 +1,10 @@
-"use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import gridIcon from "../assets/productsIcons/grid.svg";
 import listIcon from "../assets/productsIcons/list.svg";
 import { Select } from "../components";
 
-const ProductsHeader = () => {
-  const [checkedItem, setCheckedItem] = useState("gridDisplay");
-  const toggleProductsDisplay = e => {
-    setCheckedItem(e.target.id);
-  };
-
+const ProductsHeader = ({ productsView, toggleProductsView }) => {
   return (
     <>
       <div className="w-full border p-4 rounded-md border-Grey-100">
@@ -29,30 +23,30 @@ const ProductsHeader = () => {
             <input
               className="hidden"
               type="radio"
-              name="productsDisplayType"
-              id="gridDisplay"
-              checked={checkedItem === "gridDisplay"}
-              onChange={toggleProductsDisplay}
+              name="productsViewType"
+              id="gridView"
+              checked={productsView === "gridView"}
+              onChange={toggleProductsView}
             />
             <label
-              htmlFor="gridDisplay"
+              htmlFor="gridView"
               className={`cursor-pointer p-2 rounded-md hover:bg-Grey-100 ${
-                checkedItem === "gridDisplay" && "bg-Grey-100"
+                productsView === "gridView" && "bg-Grey-100"
               }`}>
               <Image src={gridIcon} alt="grid icon" width={16} height={16} />
             </label>
             <input
               className="hidden"
               type="radio"
-              name="productsDisplayType"
-              id="listDisplay"
-              checked={checkedItem === "listDisplay"}
-              onChange={toggleProductsDisplay}
+              name="productsViewType"
+              id="listView"
+              checked={productsView === "listView"}
+              onChange={toggleProductsView}
             />
             <label
-              htmlFor="listDisplay"
+              htmlFor="listView"
               className={`cursor-pointer p-2 rounded-md hover:bg-Grey-100 ${
-                checkedItem === "listDisplay" && "bg-Grey-100"
+                productsView === "listView" && "bg-Grey-100"
               }`}>
               <Image src={listIcon} alt="list icon" width={16} height={16} />
             </label>

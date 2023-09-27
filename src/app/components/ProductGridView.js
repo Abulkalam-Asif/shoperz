@@ -3,7 +3,7 @@ import React from "react";
 import cartIcon from "../assets/cart.svg";
 import heartIcon from "../assets/productsIcons/heart.svg";
 
-const ListProduct = ({ productName, image, price }) => {
+const ProductGridView = ({ productName, image, price }) => {
   const formatPrice = price => {
     return price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
   };
@@ -13,14 +13,15 @@ const ListProduct = ({ productName, image, price }) => {
       <div className="flex flex-col gap-y-4 border border-Grey-100 rounded-md p-3">
         <a
           href="#"
-          className="text-Primary-700 font-medium no-underline text-sm">
+          className="text-Primary-600 font-medium no-underline text-sm hover:underline">
           {productName}
         </a>
         <div className="h-full flex items-center justify-center">
           <Image
             src={image}
             alt={productName}
-            className="h-auto w-auto mx-auto"
+            className="h-full w-auto mx-auto"
+            height={300}
           />
         </div>
         <div className="flex items-center justify-between sm:flex-col sm:items-start sm:gap-y-2">
@@ -54,4 +55,4 @@ const ListProduct = ({ productName, image, price }) => {
   );
 };
 
-export default ListProduct;
+export default ProductGridView;

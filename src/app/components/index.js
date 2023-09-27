@@ -9,4 +9,5 @@ export { default as FooterLink } from "./FooterLink";
 export { default as FooterSocialLink } from "./FooterSocialLink";
 export { default as Benefit } from "./Benefit";
 export { default as HomeProduct } from "./HomeProduct";
-export { default as ListProduct } from "./ListProduct";
+export { default as ProductGridView } from "./ProductGridView";
+export { default as ProductListView } from "./ProductListView";
