@@ -12,7 +12,7 @@ import item3Img from "../assets/item3.png";
 import item4Img from "../assets/item4.png";
 import item5Img from "../assets/item5.png";
 
-const page = () => {
+const Page = () => {
   const [productsView, setProductsView] = useState("gridView");
   const toggleProductsView = e => {
     setProductsView(e.target.id);
@@ -68,7 +68,7 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
 
 {
   /* <input

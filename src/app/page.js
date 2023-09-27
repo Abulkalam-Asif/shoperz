@@ -1,7 +1,13 @@
 import React from "react";
-import { Benefits, BigDeals, FeaturedProducts, Hero, LandingSidebar } from "./containers";
+import {
+  Benefits,
+  BigDeals,
+  FeaturedProducts,
+  Hero,
+  LandingSidebar,
+} from "./containers";
 
-const page = () => {
+const Page = () => {
   return (
     <>
       <LandingSidebar />
@@ -13,4 +19,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
