@@ -11,3 +11,6 @@ export { default as Benefit } from "./Benefit";
 export { default as HomeProduct } from "./HomeProduct";
 export { default as ProductGridView } from "./ProductGridView";
 export { default as ProductListView } from "./ProductListView";
+export { default as ColorSelectRadio } from "./ColorSelectRadio";
+export { default as ProductH3 } from "./ProductH3";
+export { default as ProductH4 } from "./ProductH4";

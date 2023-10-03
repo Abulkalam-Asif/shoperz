@@ -2,8 +2,9 @@ import Image from "next/image";
 import React from "react";
 import cartIcon from "../assets/cart.svg";
 import heartIcon from "../assets/productsIcons/heart.svg";
+import Link from "next/link";
 
-const ProductGridView = ({ productName, image, price }) => {
+const ProductGridView = ({ productName, image, price, productId }) => {
   const formatPrice = price => {
     return price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
   };
@@ -15,11 +16,11 @@ const ProductGridView = ({ productName, image, price }) => {
           <Image src={image} alt={productName} className="w-full h-auto" />
         </div>
         <div className="w-4/5 flex flex-col gap-y-3 xl:w-3/4">
-          <a
-            href="#"
+          <Link
+            href={`/products/${productId}`}
             className="text-Primary-600 font-medium no-underline text-xl hover:underline">
             {productName}
-          </a>
+          </Link>
           <p className="text-sm text-Grey-900">
             In publishing and graphic design, Lorem ipsum is a placeholder text
             commonly used to demonstrate the visual form of a document or a

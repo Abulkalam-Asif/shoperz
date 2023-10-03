@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   ProductsHeader,
   ProductsContainer,
@@ -23,6 +23,7 @@ const Page = () => {
       productName: "Laptop Gaming computer Personal computer AMD FX",
       image: item1Img,
       price: 1200,
+      productId: "001",
     },
     {
       companyName: "Apple",
@@ -30,24 +31,28 @@ const Page = () => {
         "dialog box displaying on MacBook Pro, MacBook Pro Macintosh MacBook",
       image: item2Img,
       price: 60,
+      productId: "002",
     },
     {
       companyName: "Sony",
       productName: "SONY SRSXV900, Wireless Party Speaker, MEGA BASS",
       image: item3Img,
       price: 1200,
+      productId: "003",
     },
     {
       companyName: "Sony",
       productName: "Headphones, Noise cancelling, Bluetooth 5.0",
       image: item4Img,
       price: 920,
+      productId: "004",
     },
     {
       companyName: "HP",
       productName: 'Hp elietebook  2021, 14" Waterproof, 8GB, 12000mAh battery',
       image: item5Img,
       price: 1100,
+      productId: "005",
     },
   ];
 

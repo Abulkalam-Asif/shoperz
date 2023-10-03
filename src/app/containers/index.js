@@ -15,3 +15,9 @@ export { default as BigDeals } from "./BigDeals";
 export { default as Newsletter } from "./Newsletter";
 export { default as Footer } from "./Footer";
 export { default as FooterLinksSection } from "./FooterLinksSection";
+
+export { default as ProductMain } from "./ProductMain";
+export { default as ProductCarousel } from "./ProductCarousel";
+export { default as ProductBasicData } from "./ProductBasicData";
+export { default as ProductDescription } from "./ProductDescription";
+export { default as ProductYouMayLike } from "./ProductYouMayLike";

@@ -19,6 +19,7 @@ import cartIcon from "../assets/cart.svg";
 import barsIcon from "../assets/headerIcons/bars.svg";
 import { useDispatch } from "react-redux";
 import { toggleSidebar } from "../store/slices/isSidebarExpandedSlice";
+import Link from "next/link";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -78,9 +79,9 @@ const Header = () => {
           </div>
         </div>
         <div className="max-w-8xl mx-auto flex items-center gap-x-8 px-4 justify-between">
-          <a href="/" className="mr-10 lg:hidden">
+          <Link href="/" className="mr-10 lg:hidden">
             <Image src={shoperzLogo} alt="Shoperz logo" />
-          </a>
+          </Link>
           <button className="flex gap-x-2 items-center lg:hidden">
             <span className="whitespace-nowrap">Select Categories</span>
             <FontAwesomeIcon icon={faCaretDown} width={12} />
