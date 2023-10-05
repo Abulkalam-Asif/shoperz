@@ -14,3 +14,5 @@ export { default as ProductListView } from "./ProductListView";
 export { default as ColorSelectRadio } from "./ColorSelectRadio";
 export { default as ProductH3 } from "./ProductH3";
 export { default as ProductH4 } from "./ProductH4";
+export { default as PaginationRadio } from "./PaginationRadio";
+export { default as PaginationRadioPlaceholder } from "./PaginationRadioPlaceholder";

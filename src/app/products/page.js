@@ -12,49 +12,160 @@ import item3Img from "../assets/item3.png";
 import item4Img from "../assets/item4.png";
 import item5Img from "../assets/item5.png";
 
+const products = [
+  {
+    companyName: "Lenovo",
+    productName: "Laptop Gaming computer Personal computer AMD FX",
+    image: item1Img,
+    price: 1200,
+    productId: "001",
+  },
+  {
+    companyName: "Apple",
+    productName:
+      "dialog box displaying on MacBook Pro, MacBook Pro Macintosh MacBook",
+    image: item2Img,
+    price: 60,
+    productId: "002",
+  },
+  {
+    companyName: "Sony",
+    productName: "SONY SRSXV900, Wireless Party Speaker, MEGA BASS",
+    image: item3Img,
+    price: 1200,
+    productId: "003",
+  },
+  {
+    companyName: "Sony",
+    productName: "Headphones, Noise cancelling, Bluetooth 5.0",
+    image: item4Img,
+    price: 920,
+    productId: "004",
+  },
+  {
+    companyName: "HP",
+    productName: 'Hp elietebook  2021, 14" Waterproof, 8GB, 12000mAh battery',
+    image: item5Img,
+    price: 1100,
+    productId: "005",
+  },
+  {
+    companyName: "Lenovo",
+    productName: "Laptop Gaming computer Personal computer AMD FX",
+    image: item1Img,
+    price: 1200,
+    productId: "001",
+  },
+  {
+    companyName: "Apple",
+    productName:
+      "dialog box displaying on MacBook Pro, MacBook Pro Macintosh MacBook",
+    image: item2Img,
+    price: 60,
+    productId: "002",
+  },
+  {
+    companyName: "Sony",
+    productName: "SONY SRSXV900, Wireless Party Speaker, MEGA BASS",
+    image: item3Img,
+    price: 1200,
+    productId: "003",
+  },
+  {
+    companyName: "Sony",
+    productName: "Headphones, Noise cancelling, Bluetooth 5.0",
+    image: item4Img,
+    price: 920,
+    productId: "004",
+  },
+  {
+    companyName: "HP",
+    productName: 'Hp elietebook  2021, 14" Waterproof, 8GB, 12000mAh battery',
+    image: item5Img,
+    price: 1100,
+    productId: "005",
+  },
+  {
+    companyName: "Lenovo",
+    productName: "Laptop Gaming computer Personal computer AMD FX",
+    image: item1Img,
+    price: 1200,
+    productId: "001",
+  },
+  {
+    companyName: "Apple",
+    productName:
+      "dialog box displaying on MacBook Pro, MacBook Pro Macintosh MacBook",
+    image: item2Img,
+    price: 60,
+    productId: "002",
+  },
+  {
+    companyName: "Sony",
+    productName: "SONY SRSXV900, Wireless Party Speaker, MEGA BASS",
+    image: item3Img,
+    price: 1200,
+    productId: "003",
+  },
+  {
+    companyName: "Sony",
+    productName: "Headphones, Noise cancelling, Bluetooth 5.0",
+    image: item4Img,
+    price: 920,
+    productId: "004",
+  },
+  {
+    companyName: "HP",
+    productName: 'Hp elietebook  2021, 14" Waterproof, 8GB, 12000mAh battery',
+    image: item5Img,
+    price: 1100,
+    productId: "005",
+  },
+  {
+    companyName: "Lenovo",
+    productName: "Laptop Gaming computer Personal computer AMD FX",
+    image: item1Img,
+    price: 1200,
+    productId: "001",
+  },
+  {
+    companyName: "Apple",
+    productName:
+      "dialog box displaying on MacBook Pro, MacBook Pro Macintosh MacBook",
+    image: item2Img,
+    price: 60,
+    productId: "002",
+  },
+  {
+    companyName: "Sony",
+    productName: "SONY SRSXV900, Wireless Party Speaker, MEGA BASS",
+    image: item3Img,
+    price: 1200,
+    productId: "003",
+  },
+  {
+    companyName: "Sony",
+    productName: "Headphones, Noise cancelling, Bluetooth 5.0",
+    image: item4Img,
+    price: 920,
+    productId: "004",
+  },
+  {
+    companyName: "HP",
+    productName: 'Hp elietebook  2021, 14" Waterproof, 8GB, 12000mAh battery',
+    image: item5Img,
+    price: 1100,
+    productId: "005",
+  },
+];
+
 const Page = () => {
   const [productsView, setProductsView] = useState("gridView");
   const toggleProductsView = e => {
     setProductsView(e.target.id);
   };
-  const products = [
-    {
-      companyName: "Lenovo",
-      productName: "Laptop Gaming computer Personal computer AMD FX",
-      image: item1Img,
-      price: 1200,
-      productId: "001",
-    },
-    {
-      companyName: "Apple",
-      productName:
-        "dialog box displaying on MacBook Pro, MacBook Pro Macintosh MacBook",
-      image: item2Img,
-      price: 60,
-      productId: "002",
-    },
-    {
-      companyName: "Sony",
-      productName: "SONY SRSXV900, Wireless Party Speaker, MEGA BASS",
-      image: item3Img,
-      price: 1200,
-      productId: "003",
-    },
-    {
-      companyName: "Sony",
-      productName: "Headphones, Noise cancelling, Bluetooth 5.0",
-      image: item4Img,
-      price: 920,
-      productId: "004",
-    },
-    {
-      companyName: "HP",
-      productName: 'Hp elietebook  2021, 14" Waterproof, 8GB, 12000mAh battery',
-      image: item5Img,
-      price: 1100,
-      productId: "005",
-    },
-  ];
+
+  const [selectedPage, setSelectedPage] = useState(1);
 
   return (
     <>
@@ -66,7 +177,11 @@ const Page = () => {
             toggleProductsView={toggleProductsView}
           />
           <ProductsContainer productsView={productsView} products={products} />
-          <ProductsPagination productsCount={products.length} />
+          <ProductsPagination
+            productsCount={products.length}
+            selectedPage={selectedPage}
+            setSelectedPage={setSelectedPage}
+          />
         </div>
       </section>
     </>
@@ -74,21 +189,3 @@ const Page = () => {
 };
 
 export default Page;
-
-{
-  /* <input
-            className="hidden"
-            type="radio"
-            name="productsViewType"
-            id="gridView"
-            checked={productsView === "gridView"}
-            onChange={toggleProductsView}
-          />
-          <label
-            htmlFor="gridView"
-            className={`cursor-pointer p-2 rounded-md hover:bg-Grey-100 ${
-              productsView === "gridView" && "bg-Grey-100"
-            }`}>
-            <Image src={gridIcon} alt="grid icon" width={16} height={16} />
-          </label> */
-}
